@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sshop - Cheapest Jerseys</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        header {
+            position: relative;
+            text-align: center;
+            color: black;
+        }
+
+        .cover-image {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            filter: brightness(70%);
+        }
+
+        .header-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .header-content h1 {
+            margin: 0;
+            font-size: 4em;
+            color: white;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        .header-content a {
+            display: inline-block;
+            padding: 15px 30px;
+            margin-top: 20px;
+            background-color: #ff0000;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #ff0000;
+            text-align: center;
+            font-size: 2.5em;
+            margin-top: 20px;
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .catalog-item {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.2s;
+            text-align: center;
+        }
+
+        .catalog-item img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .catalog-item:hover {
+            transform: scale(1.05);
+        }
+
+        .price {
+            font-weight: bold;
+            color: #e74c3c;
+            font-size: 1.5em;
+        }
+
+        .add-to-cart {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #ff0000;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #ff0000;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .cart {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: 2px solid #ff0000;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .cart h3 {
+            margin: 0 0 10px;
+            color: #ff0000;
+        }
+
+        .cart-items {
+            margin-bottom: 10px;
+        }
+
+        .cart-total {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .empty-cart {
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="https://www.soccerbible.com/media/144682/microsoftteams-image-7-min.jpeg" alt="Portada de camisetas de fútbol" class="cover-image">
+        <div class="header-content">
+            <h1>Sshop</h1>
+            <a href="#catalogo">VER PRECIOS</a>
+        </div>
+    </header>
+
+    <div class="cart">
+        <h3>Carrito de compras</h3>
+        <div class="cart-items empty-cart">El carrito está vacío</div>
+        <div class="cart-total">Total: 0 €</div>
+    </div>
+
+    <main>
+        <h2 id="catalogo">Precios</h2>
+        <div class="catalog-grid">
+            <div class="catalog-item" data-name="Camisetas nuevas" data-price="12">
+                <img src="https://res.cloudinary.com/futbol-factory/image/upload/c_pad,f_auto/v1/blog/post-7hFN2FWIjmQkXk9.jpg" alt="Camiseta nueva" width="500px">
+                <h3>Camisetas nuevas</h3>
+                <p>Desde año 2021</p>
+                <p class="price">Fan version: 12 €</p>
+                <a class="add-to-cart">Añadir al carrito</a>
+            </div>
+            <div class="catalog-item" data-name="Camisetas retro / vintage" data-price="17">
+                <img src="https://static.wixstatic.com/media/850697_5d789a9af1b54845a5b302d784249e1c~mv2.png" alt="Camiseta retro" width="500px">
+                <h3>Camisetas retro / vintage</h3>
+                <p>Camisetas hasta año 2020 (incluído).</p>
+                <p class="price">17 €</p>
+                <a class="add-to-cart">Añadir al carrito</a>
+            </div>
+            <div class="catalog-item" data-name="Camisetas manga larga" data-price="20">
+                <img src="https://www.telegraph.co.uk/content/dam/football/2021/02/16/140221-RM-LONG-SLEEVE-FOOTBALL-SHIRT-01-01_trans_NvBQzQNjv4Bqqk2ROpugF3c1ETx1Pmz9fH-vSLtd7X2T7a1XCgvtY7w.jpg" alt="Camiseta manga larga" width="500px">
+                <h3>Camisetas manga larga</h3>
+                <p class="price">20 €</p>
+                <a class="add-to-cart">Añadir al carrito</a>
+            </div>
+            <div class="catalog-item" data-name="Personalización de camisetas" data-price="3">
+                <img src="https://madrid-shop.cn/wp-content/uploads/2023/12/cual-es-la-mejor-pagina-para-comprar-replicas-de-camisetas-de-futbol.webp" alt="Personalización" width="500px">
+                <h3>Personalización de camisetas con nombre y número</h3>
+                <p class="price">3 €</p>
+                <a class="add-to-cart">Añadir al carrito</a>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3>Consultar disponibilidad de camiseta</h3>
+            <p>samuelgeminis5@gmail.com</p>
+            <h3>Gastos de envío</h3>
+            <p>1-3 camiseta(s): 5 €</p>
+            <p>4 camisetas o más: Gratis</p>
+            <p>Envíos de 8 a 20 días</p>
+            <p>Pedidos con camisetas personalizadas pueden llegar a tardar de 3 a 7 días más.</p>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sshop.</p>
+    </footer>
+
+    <script>
+        const cart = {
+            items: [],
+            total: 0
+        };
+
+        function updateCartDisplay() {
+            const cartItemsContainer = document.querySelector('.cart-items');
+            const cartTotalDisplay = document.querySelector('.cart-total');
+
+            if (cart.items.length === 0) {
+                cartItemsContainer.textContent = "El carrito está vacío";
+            } else {
+                cartItemsContainer.innerHTML = cart.items.map(item => `
+                    <div>${item.name} - ${item.price} €</div>
+                `).join("");
+            }
+
+            cartTotalDisplay.textContent = `Total: ${cart.total} €`;
+        }
+
+        function addToCart(item) {
+            cart.items.push(item);
+            cart.total += item.price;
+            updateCartDisplay();
+        }
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', (event) => {
+                const itemElement = event.target.closest('.catalog-item');
+                const itemName = itemElement.getAttribute('data-name');
+                const itemPrice = parseFloat(itemElement.getAttribute('data-price'));
+
+                addToCart({ name: itemName, price: itemPrice });
+            });
+        });
+
+        updateCartDisplay();
+    </script>
+</body>
+
+</html>
